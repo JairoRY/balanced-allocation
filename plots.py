@@ -4,14 +4,8 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 
+"""Detects the scheme name based on filename patterns."""
 def detect_scheme_from_filename(fname: str) -> str:
-    """
-    Detects the scheme name based on filename patterns like:
-    - results_d1.csv → One-choice
-    - experiment_d2.csv → Two-choice
-    - myrun_d3.csv → Three-choice
-    - results_1plusbeta0.3.csv → (1+β)-choice (β=0.3)
-    """
     d_match = re.search(r"_d(\d+)", fname)
     if d_match:
         d = int(d_match.group(1))
@@ -31,13 +25,13 @@ def detect_scheme_from_filename(fname: str) -> str:
 
     return "Unknown scheme"
 
+"""Helper to make a plot with proper axis limits and style."""
 def plot_range(df, x, y, color, title, ylabel, x_start):
-    """Helper to make a plot with proper axis limits and style."""
     plt.figure(figsize=(8,5))
     plt.plot(df[x], df[y], color=color)
-    plt.title(title)
-    plt.xlabel("n")
-    plt.ylabel(ylabel)
+    plt.title(title, fontsize=14)
+    plt.xlabel("n", fontsize=12)
+    plt.ylabel(ylabel, fontsize=12)
     plt.grid(True)
     plt.xlim(left=x_start, right=df["n"].max())
     plt.ylim(bottom=0)
