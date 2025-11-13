@@ -176,7 +176,7 @@ void help(char *p) {
          << "  --m INT          #bins (default 500)\n"
          << "  --T INT          #trials (default 20)\n"
          << "  --d INT          d-choice (default 2)\n"
-         << "  --b INT          batch size (default 1 = no batching)\n"
+         << "  --b              enable b-batching (default off)\n"
          << "  --beta FLOAT     enable (1+beta)-choice instead of d-choice\n"
          << "  --k INT          #questions about partial information (default 0)";
 }
