@@ -41,6 +41,15 @@ The program simulates throwing up to $m^2$ balls into $m$ bins, collecting stati
 ./balancedalloc [opts]
 ```
 
+#### Key Options:
+
+- --m INT        #bins (default 500)
+- --T INT        #trials (default 20)
+- --d INT        d-choice (default 2)
+- --b            enable b-batching (default off)
+- --beta FLOAT   enable (1+beta)-choice instead of d-choice
+- --k INT        #questions about partial information (default 0)
+
 ### 3.2. Plotting (python3 plots.py)
 
 The plotting script reads the CSV output and generates visualizations for the mean gap ($\overline{G_n}$) and standard deviation ($\sigma_{G_n}$).
