@@ -23,7 +23,7 @@ def detect_scheme_from_filename(fname: str) -> str:
         beta = float(beta_match.group(1))
         return f"(1+β)-choice (β={beta:.2f})"
     
-    k_match = re.search(r"_k(\k+)", fname)
+    k_match = re.search(r"_k(\d+)", fname)
     if k_match:
         k = int(k_match.group(1))
         return f"Partial information (k={k})"
