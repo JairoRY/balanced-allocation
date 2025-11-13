@@ -190,7 +190,7 @@ int main(int argc,char**argv){
         if (a=="--m" && i+1<argc) m=stoi(argv[++i]);
         else if (a=="--T" && i+1<argc) T=stoi(argv[++i]);
         else if (a=="--d" && i+1<argc) d=stoi(argv[++i]); // d is ignored if beta or k are specified
-        else if (a=="--b" && i+1<argc) b=stoi(argv[++i]);
+        else if (a=="--b") b=m;
         else if (a=="--beta" && i+1<argc) beta=stod(argv[++i]); // beta is ignored if k is specified
         else if (a=="--k" && i+1<argc) k=stoi(argv[++i]);
         else { help(argv[0]); return 0; }
